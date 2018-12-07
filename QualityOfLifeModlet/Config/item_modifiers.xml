@@ -1,6 +1,0 @@
-<configs>
-<!-- Remove crosshair from reflex sight mod -->
-	<set xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']/item_property_overrides/property[@name='CrosshairOnAim']/@value">false</set>
-<!-- Remove crosshair from laser sight mod -->
-	<set xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']/item_property_overrides/property[@name='CrosshairOnAim']/@value">false</set>
-</configs>

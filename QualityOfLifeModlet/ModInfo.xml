@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xml>
-	<ModInfo>
-		<Name value="QualityOfDeath" />
-		<Description value="This package is based on having a more balanced PvP Server with higher rates while maintaining progressive gameplay." />
-		<Author value="SixxGunZ" />
-		<Version value="1.0.0" />
-	</ModInfo>
-</xml>

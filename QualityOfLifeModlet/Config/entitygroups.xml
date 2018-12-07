@@ -1,6 +1,0 @@
-<BetterBalanceMod>
-<!-- Stripper removal -->
-	<remove xpath="/entitygroups/entitygroup/entity[@name='zombieStripper']" />
-<!-- Reduce vulture chances -->
-	<set xpath="/entitygroups/entitygroup/entity[@name='animalZombieVulture']/@prob">0.05</set>
-</BetterBalanceMod>

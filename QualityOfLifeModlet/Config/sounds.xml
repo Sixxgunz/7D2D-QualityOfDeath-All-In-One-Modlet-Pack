@@ -1,8 +1,0 @@
-<configs>
-	<remove xpath="/Sounds/SoundDataNode[@name='Auger_Fire_Start']/AudioClip[@ClipName='Sounds/Weapons/Motorized/Auger/auger_fire_lp']" />
-	<remove xpath="/Sounds/SoundDataNode[@name='Auger_Fire_Start']/AudioClip[@ClipName='Sounds/Weapons/Motorized/Auger/Auger_Fire_Start']" />
-	<remove xpath="/Sounds/SoundDataNode[@name='Auger_Fire_Start']/AudioClip[@ClipName='Sounds/Weapons/Motorized/Auger/auger_fire_end']" />
-	<remove xpath="/Sounds/SoundDataNode[@name='chainsaw_fire_start']/AudioClip[@ClipName='Sounds/Weapons/Motorized/Chainsaw/chainsaw_fire_lp']" />
-	<remove xpath="/Sounds/SoundDataNode[@name='chainsaw_fire_start']/AudioClip[@ClipName='Sounds/Weapons/Motorized/Chainsaw/chainsaw_fire_start']" />
-	<remove xpath="/Sounds/SoundDataNode[@name='chainsaw_fire_start']/AudioClip[@ClipName='Sounds/Weapons/Motorized/Chainsaw/chainsaw_fire_end']" />
-</configs>
