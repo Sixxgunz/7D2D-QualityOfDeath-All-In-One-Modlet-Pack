@@ -1,0 +1,440 @@
+<configs>
+<!-- 30k Stacks -->
+	<set xpath="/items/item/property[@name='Stacknumber' and not(@value='1')]/@value">30000</set>
+
+<!-- Is this correct?  Does this increase crafting exp? I don't think it does, I think I should be looking in recipes -->
+	<set xpath="/items/item[@name='resourceWood']/property[@name='LootExpValue']/@value">180</set>
+	<set xpath="/items/item[@name='resourceForgedIron']/property[@name='CraftingIngredientExp']/@value">540</set>
+	<set xpath="/items/item[@name='resourceForgedSteel']/property[@name='CraftingIngredientExp']/@value">720</set>
+	<set xpath="/items/item[@name='resourceScrapPolymers']/property[@name='CraftingIngredientExp']/@value">720</set>
+	<set xpath="/items/item[@name='resourceOilShale']/property[@name='CraftingIngredientExp']/@value">180</set>
+	<set xpath="/items/item[@name='resourceMilitaryFiber']/property[@name='CraftingIngredientExp']/@value">540</set>
+	<set xpath="/items/item[@name='resourceElectricParts']/property[@name='CraftingIngredientExp']/@value">720</set>
+	<set xpath="/items/item[@name='resourceMechanicalParts']/property[@name='CraftingIngredientExp']/@value">720</set>
+	<set xpath="/items/item[@name='resourceInsulator']/property[@name='CraftingIngredientExp']/@value">720</set>
+
+<!-- Remove crosshair while aiming -->
+	<set xpath="/items/item/property[@name='CrosshairOnAim']/@value">false</set>
+	
+<!-- FOV for weapon sights in general (default: 55) -->
+	<set xpath="/items/item/property[@class='Action1']/property[@name='Zoom_max_out']/@value">50</set>
+	<set xpath="/items/item/property[@class='Action1']/property[@name='Zoom_max_in']/@value">50</set>
+	
+<!-- FOV specifically for Compound Bow sights (default: 40) -->
+	<set xpath="/items/item[@name='gunCompoundBow']/property[@class='Action1']/property[@name='Zoom_max_out']/@value">35</set>
+	<set xpath="/items/item[@name='gunCompoundBow']/property[@class='Action1']/property[@name='Zoom_max_in']/@value">35</set>
+
+<!-- Change damage based on quality level -->
+	<remove xpath="/items/item/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']"/>
+	<remove xpath="/items/item/effect_group[@name='Base Effects']/passive_effect[@name='BlockDamage'][@operation='perc_add']"/>
+	<append xpath="/items/item/effect_group[@name='Base Effects']">
+		<passive_effect name="EntityDamage" operation="perc_add" value="0,1" tier="1,6"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="0,2" tier="1,6"/>
+	</append>
+<!-- Alter the Entity Damage in line with the original files-->
+	<set xpath="/items/item[@name='gunAK47']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">-.2,.8</set>
+	<set xpath="/items/item[@name='gunSMG5']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">-.2,.8</set>
+	<set xpath="/items/item[@name='gunHuntingRifle']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">.35,1.35</set>
+	<set xpath="/items/item[@name='gunMR10']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">.25,1.25</set>
+	<set xpath="/items/item[@name='gunCompoundBow']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">.3,1.3</set>
+	<set xpath="/items/item[@name='gunCrossbow']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">.45,1.45</set>
+<!-- Alter the Block Damage in line with the original files-->
+	<set xpath="/items/item[@name='gunHuntingRifle']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">.35,2.35</set>
+	
+<!-- Balanced Weapon Damage Settings -->
+	<set xpath="/items/item[@name='gunMR10']/effect_group[@name='Base Effects']/passive_effect[@name='MagazineSize']/@value">8</set>
+	<set xpath="/items/item[@name='ammo9mmBullet']/effect_group/passive_effect[@name='EntityDamage']/@value">40</set>
+	<set xpath="/items/item[@name='ammo9mmBulletSteel']/effect_group/passive_effect[@name='EntityDamage']/@value">36</set>
+	<set xpath="/items/item[@name='ammo44MagnumBullet']/effect_group/passive_effect[@name='EntityDamage']/@value">120</set>
+	<set xpath="/items/item[@name='ammo44MagnumBulletSteel']/effect_group/passive_effect[@name='EntityDamage']/@value">110</set>
+	<set xpath="/items/item[@name='ammo762mmBulletFMJ']/effect_group/passive_effect[@name='EntityDamage']/@value">60</set>
+	<set xpath="/items/item[@name='ammo762mmBulletFMJSteel']/effect_group/passive_effect[@name='EntityDamage']/@value">56</set>
+	<set xpath="/items/item[@name='ammoShotgunShell']/effect_group/passive_effect[@name='EntityDamage']/@value">12</set>
+	<set xpath="/items/item[@name='ammoShotgunSlug']/effect_group/passive_effect[@name='EntityDamage']/@value">140</set>
+	<set xpath="/items/item[@name='ammoBlunderbuss']/effect_group/passive_effect[@name='EntityDamage']/@value">9</set>
+	<set xpath="/items/item[@name='ammoRocketHE']/effect_group/passive_effect[@name='EntityDamage']/@value">500</set>
+	<set xpath="/items/item[@name='ammoRocketHE']/effect_group/passive_effect[@name='BlockDamage']/@value">150</set>
+	<set xpath="/items/item[@name='ammoRocketFrag']/effect_group/passive_effect[@name='EntityDamage']/@value">500</set>
+	<set xpath="/items/item[@name='ammoRocketFrag']/effect_group/passive_effect[@name='BlockDamage']/@value">150</set>
+	<set xpath="/items/item[@name='ammoArrowStone']/effect_group/passive_effect[@name='EntityDamage']/@value">25</set>
+	<set xpath="/items/item[@name='ammoArrowIron']/effect_group/passive_effect[@name='EntityDamage']/@value">35</set>
+	<set xpath="/items/item[@name='ammoArrowSteelAP']/effect_group/passive_effect[@name='EntityDamage']/@value">45</set>
+	<set xpath="/items/item[@name='ammoArrowFlaming']/effect_group/passive_effect[@name='EntityDamage']/@value">35</set>
+	<set xpath="/items/item[@name='ammoCrossbowBoltStone']/effect_group/passive_effect[@name='EntityDamage']/@value">28</set>
+	<set xpath="/items/item[@name='ammoCrossbowBoltIron']/effect_group/passive_effect[@name='EntityDamage']/@value">39</set>
+	<set xpath="/items/item[@name='ammoCrossbowBoltSteelAP']/effect_group/passive_effect[@name='EntityDamage']/@value">50</set>
+	
+	<set xpath="/items/item[@name='ammoCrossbowBoltExploding']/effect_group/passive_effect[@name='EntityDamage']/@value">35</set>
+	<set xpath="/items/item[@name='ammoCrossbowBoltExploding']/effect_group/passive_effect[@name='BlockDamage']/@value">6</set>
+	
+	<set xpath="/items/item[@name='ammoCrossbowBoltExploding']/property[@class='Action1']/property[@name='Explosion.EntityDamage']/@value">190</set>
+	<set xpath="/items/item[@name='ammoCrossbowBoltExploding']/property[@class='Action1']/property[@name='Explosion.BlockDamage']/@value">50</set>
+	
+	<set xpath="/items/item[@name='thrownAmmoPipeBomb']/property[@name='Explosion.BlockDamage']/@value">45</set>
+	<set xpath="/items/item[@name='thrownAmmoPipeBomb']/property[@name='Explosion.EntityDamage']/@value">300</set>
+	<set xpath="/items/item[@name='thrownDynamite']/property[@name='Explosion.BlockDamage']/@value">1700</set>
+	<set xpath="/items/item[@name='thrownDynamite']/property[@name='Explosion.EntityDamage']/@value">550</set>
+	<set xpath="/items/item[@name='thrownAmmoMolotovCocktail']/property[@name='Explosion.BlockDamage']/@value">10</set>
+	<set xpath="/items/item[@name='thrownAmmoMolotovCocktail']/property[@name='Explosion.EntityDamage']/@value">10</set>
+	
+	<set xpath="/items/item[@name='ammoDartSteel']/effect_group/passive_effect[@name='EntityDamage']/@value">45</set>
+	
+	<set xpath="/items/item[@name='meleeClubIron']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage']/@value">17</set>
+	
+<!-- Zombie nerf -->
+<!-- General -->
+	<set xpath="/items/item[@name='meleeHandMaster']/property[@class='Action0']/property[@name='Delay']/@value">1</set>
+<!-- Range -->
+	<set xpath="/items/item[@name='meleeHandMaster']/property[@class='Action0']/property[@name='Range']/@value">1.35</set>
+	<set xpath="/items/item[@name='meleeHandZombieCop']/property[@class='Action0']/property[@name='Range']/@value">1.4</set>
+	<set xpath="/items/item[@name='meleeHandAnimalBear']/property[@class='Action0']/property[@name='Range']/@value">2</set>
+	<set xpath="/items/item[@name='meleeHandAnimalZombieBear']/property[@class='Action0']/property[@name='Range']/@value">2</set>
+	<set xpath="/items/item[@name='meleeHandAnimalSnake']/property[@class='Action0']/property[@name='Range']/@value">1</set>
+	<set xpath="/items/item[@name='meleeHandAnimalWolf']/property[@class='Action0']/property[@name='Range']/@value">1.55</set>
+	<append xpath="/items/item[@name='meleeHandPlayer']/property[@class='Action0']">
+			<property name="Range" value="1.65"/>
+	</append>	
+
+<!-- Stop Zs eating through hard materials -->
+	<append xpath="/items/item[@name='meleeHandMaster']/effect_group[@name='Base Effects']">
+			<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="concrete,metal,stone"/>
+	</append>
+	<append xpath="/items/item[starts-with(@name, 'meleeHandZombie')]/effect_group[@name='Base Effects']">	
+			<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="concrete,metal,stone"/>
+	</append>
+	
+<!-- Z vomit removal -->
+	<remove xpath="/items/item[starts-with(@name, 'meleeHandZombieCop')]/property[@class='Action1']" />
+	
+<!-- Nerfing Vultures -->
+	<set xpath="/items/item[@name='meleeHandAnimalZombieVulture']/property[@class='Action0']/property[@name='DamageEntity']/@value">1</set>
+	<insertAfter xpath="/items/item[@name='meleeHandAnimalZombieVulture']/property[@class='Action0']/property[@name='Buff']" >
+	<property name="Buff_chance" value="0.05,0.015"/>
+	</insertAfter>
+	<set xpath="/items/item[@name='meleeHandAnimalZombieVulture']/effect_group[@name='Base Effects']/passive_effect[@name='BuffProcChance' and @tags='buffInjuryBleeding']/@value">0.15</set>
+	<set xpath="/items/item[@name='meleeHandAnimalZombieVulture']/effect_group[@name='Base Effects']/passive_effect[@name='BuffProcChance' and @tags='buffIllInfection0']/@value">0.10</set>
+	<remove xpath="/items/item[@name='meleeHandAnimalZombieVulture']/property[@class='Action1']"/>
+
+<!-- Scrap Iron Tools -->
+<append xpath="/items">
+
+<item name="Scrap Iron Shiv">
+	<property name="Tags" value="knife,melee,light,weapon,meleeWeapon,perkDeepCuts,perkTheHuntsman"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="HoldType" value="36"/>
+	<property name="CustomIcon" value="meleeBoneShiv"/>
+	<property name="CustomIconTint" value="7C756E"/>
+	<property name="TintColor" value="230,105,32" />
+	<property name="Meshfile" value="Items/Weapons/Melee/Knives/boneShivPrefab"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="EconomicValue" value="25"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property name="RepairTools" value="resourceScrapIron"/>
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value="0.1"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value="0.1"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+	</property>
+
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
+		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="8"/> 
+		<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="48"/>
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="10" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="50,100" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.5" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="2" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="16" tags="secondary"/> 
+
+		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player1painlg">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="IsMale" target="self"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player2painlg">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="IsMale" target="self" invert="true"/>
+		</triggered_effect>
+	</effect_group>
+	<property name="Group" value="Tools/Traps,Basics"/>
+	<property name="DescriptionKey" value="Slightly better than the bone shiv for skinning animals. Not as good as an iron knife."/>
+	<property name="ActionSkillGroup" value="Blade Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+</item>
+
+<item name="Scrap Iron Axe">
+	<property name="Tags" value="knife,melee,medium,tool,perkDeepCuts,perkMotherLode"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="HoldType" value="17"/>
+	<property name="Meshfile" value="Items/Weapons/Melee/Axe/fireaxePrefab"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="CustomIcon" value="meleeToolFireaxeIron" />
+	<property name="CustomIconTint" value="E66920" />
+	<property name="TintColor" value="230,105,32" />
+	<property name="RepairTools" value="resourceScrapIron"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="FuelValue" value="125"/>
+	<property name="EconomicValue" value="36"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+	</property>
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="2.9"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="12"/> 
+		<passive_effect name="BlockDamage" operation="base_set" value="23"/>
+		<passive_effect name="HarvestCount" operation="base_set" value=".35" tags="butcherHarvest"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="45"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,450" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.2" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="29" tags="secondary"/>
+	</effect_group>
+	<property name="Group" value="Tools/Traps,Basics"/>
+	<property name="ActionSkillGroup" value="Mining Tools"/>
+	<property name="CraftingSkillGroup" value="craftSkillTools"/>
+	<property name="DescriptionKey" value="Slightly better than the stone axe for chopping wood. Not as good as a real iron fireaxe."/>
+</item>
+
+<item name="Scrap Iron Pickaxe">
+	<property name="Tags" value="melee,medium,tool,perkMotherLode"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="HoldType" value="12"/>
+	<property name="Meshfile" value="Items/Tools/pickaxe_ironPrefab"/>
+	<property name="CustomIcon" value="meleeToolPickaxeIron" />
+	<property name="CustomIconTint" value="E66920" />
+	<property name="TintColor" value="230,105,32" />
+	<property name="Material" value="Mmetal"/>
+	<property name="RepairTools" value="resourceScrapIron"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="FuelValue" value="250"/>
+	<property name="EconomicValue" value="36"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+	</property>
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="11"/> 
+		<passive_effect name="BlockDamage" operation="base_set" value="13"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="55"/> 
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="17" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,450" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.1" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="23" tags="secondary"/>
+		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player1painlg">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="IsMale" target="self"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player2painlg">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="IsMale" target="self" invert="true"/>
+		</triggered_effect>
+	</effect_group>
+	<property name="Group" value="Tools/Traps,Basics"/>
+	<property name="ActionSkillGroup" value="Mining Tools"/>
+	<property name="CraftingSkillGroup" value="craftSkillTools"/>
+	<property name="PickupJournalEntry" value="miningTip"/>
+	<property name="DescriptionKey" value="Slightly better than the stone axe for mining. Not as good as a real iron pickaxe."/>
+</item>
+
+<item name="Scrap Iron Shovel">
+	<property name="Tags" value="melee,medium,tool,shovel,perkMotherLode"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="HoldType" value="18"/>
+	<property name="Meshfile" value="Items/Tools/stone_shovelPrefab"/>
+	<property name="CustomIcon" value="meleeToolShovelStone" />
+	<property name="CustomIconTint" value="E66920" />
+	<property name="TintColor" value="230,105,32" />
+	<property name="Material" value="Mmetal"/>
+	<property name="RepairTools" value="resourceScrapIron"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property name="FuelValue" value="100"/>
+	<property name="EconomicValue" value="25"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>  
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>  
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+	</property>
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="3.4"/>
+		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="13"/> 
+		<passive_effect name="BlockDamage" operation="base_set" value="16"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="52"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="earth"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="15" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,450" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.4" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="2.1" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="22" tags="secondary"/>
+	</effect_group>
+	<property name="Group" value="Tools/Traps,Basics"/>
+	<property name="ActionSkillGroup" value="Mining Tools"/>
+	<property name="CraftingSkillGroup" value="craftSkillTools"/>
+	<property name="PickupJournalEntry" value="miningTip"/>
+	<property name="DescriptionKey" value="Slightly better than the stone shovel for digging. Not as good as a real iron shovel."/>
+</item>
+</append>
+<!-- End Scrap Iron Tools -->
+
+<!-- Stone Axe Speed Boost -->
+<set xpath="/items/item[@name='meleeToolStoneAxe']/effect_group/passive_effect[@name='AttacksPerMinute']/@value">100</set>
+
+<!-- Speed up Forge Melt times - Default '0.25', crafting times in forge - Default '0.5', and increase stored ore count to 50k - Default value = '30000' -->
+<set xpath="/items/item[@name='unit_iron']/property[@name='MeltTimePerUnit']/@value">0.05</set>
+<set xpath="/items/item[@name='unit_iron']/property[@name='CraftingIngredientTime']/@value">0.05</set>
+<set xpath="/items/item[@name='unit_iron']/property[@name='Stacknumber']/@value">50000</set>
+
+<!-- Lockpicking -->
+<append xpath="/items">
+
+<item name="meleeToolLockpick">
+	<property name="Tags" value="knife,melee,light,weapon,meleeWeapon,perkDeepCuts,perkTheHuntsman"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="HoldType" value="36"/>
+	<property name="CustomIcon" value="meleeBoneShiv"/>
+	<property name="CustomIconTint" value="7C756E"/>
+	<property name="TintColor" value="230,105,32" />
+	<property name="Meshfile" value="Items/Weapons/Melee/Knives/boneShivPrefab"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="EconomicValue" value="25"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="RepairTools" value="resourceScrapIron"/>
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value="0.1"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="Repair"/>
+		<property name="Delay" value="1"/> 
+		<property name="Repair_amount" value="100"/>
+		<property name="Upgrade_hit_offset" value="1"/>
+		<property name="Sound_start" value="repair_block"/>
+		<property name="UsePowerAttackAnimation" value="false"/>
+	</property>
+
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="1.5"/>
+		<passive_effect name="BlockRange" operation="base_set" value="1.5"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="1"/> 
+		<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="100"/>
+		<passive_effect name="HarvestCount" operation="base_set" value=".15" tags="butcherHarvest"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="6" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="25,250" tier="1,6"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="10"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	<!--<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.5" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="2" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="6" tags="secondary"/> 
+
+		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player1painlg">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="IsMale" target="self"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player2painlg">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="IsMale" target="self" invert="true"/>
+		</triggered_effect>
+	</effect_group>-->
+	<property name="Group" value="Tools/Traps,Basics"/>
+	<property name="DescriptionKey" value="meleeToolLockpickDesc"/>
+	<property name="ActionSkillGroup" value="Blade Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+</item>
+</append>
+
+</configs>
