@@ -1,0 +1,34 @@
+<configs>
+<!--Adjust Trader Markup when purchasing and Markdown when selling to Traders-->
+	
+	<set xpath="/traders[@currency_item='casinoCoin']/@buy_markup">5.0</set>
+	<set xpath="/traders[@currency_item='casinoCoin']/@sell_markdown">0.25</set>
+	<set xpath="/traders[@currency_item='casinoCoin']/@quality_mod">3,6</set>
+	
+<!--Increase or decrease minimum and maximum amount of items carried by trader-->
+	<set xpath="/traders/trader_info[@id='1']/@min_inventory">250</set>
+	<set xpath="/traders/trader_info[@id='1']/@max_inventory">500</set>
+	
+<!--Honestly not sure what this does, haven't looked it up yet-->
+	<set xpath="/traders/trader_info[@id='1']/@min_items_swapped">30</set>
+	<set xpath="/traders/trader_info[@id='1']/@max_items_swapped">50</set>
+	
+<!--Adjust Trader Open and Closed Times-->
+	<set xpath="/traders/trader_info[@id='1']/@open_time">4:05</set>
+	<set xpath="/traders/trader_info[@id='1']/@close_time">20:00</set>
+	
+<!--Adjust how often Traders reset - in game days-->
+	<set xpath="/traders/trader_info[@id='1']/@reset_interval">1</set>
+	
+<!-- Player Owned Vending Machines Not useable until exploit fixed.-->
+	<set xpath="/traders/trader_info[@id='3']/@player_owned">false</set>
+	
+<!-- Vending Machines spawned in world. -->
+	<set xpath="/traders/trader_info[@id='4']/@reset_interval">1</set>
+	<set xpath="/traders/trader_info[@id='4']/@override_buy_markup">1.0</set>
+	<set xpath="/traders/trader_info[@id='4']/trader_items/@count">150,500</set>
+	
+<!-- Rented Vending Machines - Not rentable until exploit fixed.-->
+	<set xpath="/traders/trader_info[@id='5']/@rentable">false</set>
+
+</configs>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+<!-- Loot list for Car Respawn -->
+	<append xpath="/blockplaceholders">
+		<placeholder name="lootMyCarsHelper">
+			<block name="oilBarrel" prob="0.01"/>
+			<block name="cntCar03SedanDamage0" prob="1"/>
+			<block name="cntCar03SedanDamage1" prob="2"/>
+			<block name="cntCar03SedanDamage2" prob="2"/>
+			<block name="cntBusSchool" prob="0.1"/>
+			<block name="cntBusSchoolShort" prob="0.1"/>
+			<block name="cntBusShuttle" prob="0.1"/>
+			<block name="cntBusCity" prob="0.1"/>
+		</placeholder>
+	</append>
+	
+	<!--Reduced Opened loot containers in poi's-->
+	<set xpath="/blockplaceholders/*/block[@name='cntCabinetOldBottom']/@prob">0.7</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntCabinetOldBottomOpen']/@prob">0.3</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntCharcoalGrillClosed']/@prob">0.7</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntCharcoalGrillOpen']/@prob">0.3</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntCoolerClosed']/@prob">0.7</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntCoolerOpen']/@prob">0.3</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntCupboardCabinetOldTopClosed']/@prob">0.7</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntCupboardCabinetOldTopOpen']/@prob">0.3</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntCupboardCabinetRedTopClosed']/@prob">0.7</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntCupboardCabinetRedTopOpen']/@prob">0.3</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntGasGrillClosed']/@prob">0.7</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntGasGrillOpen']/@prob">0.3</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntMicrowaveOvenVer1Closed']/@prob">0.7</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntMicrowaveOvenVer1Open']/@prob">0.3</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntRetroFridgeVer1Closed']/@prob">0.7</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntRetroFridgeVer2Open']/@prob">0.3</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntStoveOldVer1Closed']/@prob">0.7</set>
+	<set xpath="/blockplaceholders/*/block[@name='cntStoveOldVer2Open']/@prob">0.3</set>
+	
+</config>

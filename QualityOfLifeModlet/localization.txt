@@ -1,0 +1,3 @@
+
+meleeToolLockpick,items,Tool,New,Crude Lockpick,,,,,
+meleeToolLockpickDesc,items,Melee,KgNone,"Prefered tool of choice for every locked device on scavenging expeditions.\nRepair with Iron.",,,,,,
