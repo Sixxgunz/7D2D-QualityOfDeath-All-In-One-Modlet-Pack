@@ -15,6 +15,22 @@
 	<append xpath="/blocks/block[@name='ladderSteel']">
 		<property name="MovementFactor" value="2.6"/>
 	</append>
+	
+<!-- Craftable Red Light -->	
+<append xpath="/blocks">
+<block name="customLightRed_Player">
+	<property name="Class" value="PoweredLight"/>
+	<property name="Extends" value="porchLight01"/>
+	<property name="CreativeMode" value="Player"/>
+	<property name="CustomIcon" value="industrialLight02"/>
+	<property name="DescriptionKey" value="lightPlayerGroupDesc"/>
+	<property name="RuntimeSwitch" value="true"/>
+	<property name="Material" value="Mglass"/>
+	<property name="StabilitySupport" value="false"/>
+	<property name="Model" value="Entities/Lighting/industrial_light_02_redPrefab"/> <property name="HandleFace" value="Top"/>
+	<property name="TakeDelay" value="5"/>
+</block>
+</append>
 
 <!-- Makes Hardened Chest require Forged Steel to repair -->
 <set xpath="/blocks/block[@name='cntHardenedChestSecure']/property[@class='RepairItems']/property/@name">resourceForgedSteel</set>
@@ -746,6 +762,52 @@
 			<property name="ItemCount" value="1"/>
 			<property name="UpgradeHitCount" value="45"/>
 		</property>
+	</append>
+
+<!-- Change Movement speed based on terrain -->
+<!--Sand -->
+	<append xpath="/blocks/block[@name='terrSand']">
+		<property name="MovementFactor" value=".8"/>
+	</append>
+<!--Snow -->
+	<append xpath="/blocks/block[@name='terrSnow']">
+		<property name="MovementFactor" value=".8"/>
+	</append>
+<!--Bedrock -->
+	<append xpath="/blocks/block[@name='terrBedrock']">
+		<property name="MovementFactor" value="1.5"/>
+	</append>
+<!--Desert -->
+	<append xpath="/blocks/block[@name='terrDesertGround']">
+		<property name="MovementFactor" value=".9"/>
+	</append>
+<!--Asphalt -->
+	<append xpath="/blocks/block[@name='terrAsphalt']">
+		<property name="MovementFactor" value="1.35"/>
+	</append>
+<!--Gravel -->
+	<append xpath="/blocks/block[@name='terrGravel']">
+		<property name="MovementFactor" value="1.15"/>
+	</append>
+<!--Ice-->
+	<append xpath="/blocks/block[@name='terrIce']"><!--Ice-->
+		<property name="MovementFactor" value=".75"/>
+	</append>
+<!--Burnt Forest -->
+	<append xpath="/blocks/block[@name='terrBurntForestGround']">
+		<property name="MovementFactor" value=".95"/>
+	</append>
+<!--Destroyed Stone -->
+	<append xpath="/blocks/block[@name='terrDestroyedStone']">
+		<property name="MovementFactor" value=".92"/>
+	</append>
+<!--Concrete -->
+	<append xpath="/blocks/block[@name='terrConcrete']">
+		<property name="MovementFactor" value="1.25"/>
+	</append>
+<!--Sidewalk -->
+	<append xpath="/blocks/block[@name='terrSidewalk']">
+		<property name="MovementFactor" value="1.2"/>
 	</append>
 	
 </configs>

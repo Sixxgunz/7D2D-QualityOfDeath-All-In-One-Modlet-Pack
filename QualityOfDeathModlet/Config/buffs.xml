@@ -44,12 +44,21 @@
 	</append>
 	
 <!--Reduced Infection Debuff from lack of food / water -->
-<set xpath="/buffs/buff[@name='buffIllInfection1']/effect_group/passive_effect[@name='StaminaLoss']/@value">0.2</set>
-<set xpath="/buffs/buff[@name='buffIllInfection1']/effect_group/passive_effect[@name='StaminaMax']/@value">20</set>
-<set xpath="/buffs/buff[@name='buffIllInfection2']/effect_group/passive_effect[@name='StaminaChangeOT']/@value">2</set>
-<set xpath="/buffs/buff[@name='buffIllInfection2']/effect_group/passive_effect[@name='StaminaLoss']/@value">0.4</set>
-<set xpath="/buffs/buff[@name='buffIllInfection2']/effect_group/passive_effect[@name='StaminaMax']/@value">40</set>
-<set xpath="/buffs/buff[@name='buffIllInfection3']/effect_group/passive_effect[@name='StaminaChangeOT']/@value">4</set>
-<set xpath="/buffs/buff[@name='buffIllInfection3']/effect_group/passive_effect[@name='StaminaLoss']/@value">0.6</set>
-<set xpath="/buffs/buff[@name='buffIllInfection3']/effect_group/passive_effect[@name='StaminaMax']/@value">60</set>
+	<set xpath="/buffs/buff[@name='buffIllInfection1']/effect_group/passive_effect[@name='StaminaLoss']/@value">0.2</set>
+	<set xpath="/buffs/buff[@name='buffIllInfection1']/effect_group/passive_effect[@name='StaminaMax']/@value">20</set>
+	<set xpath="/buffs/buff[@name='buffIllInfection2']/effect_group/passive_effect[@name='StaminaChangeOT']/@value">2</set>
+	<set xpath="/buffs/buff[@name='buffIllInfection2']/effect_group/passive_effect[@name='StaminaLoss']/@value">0.4</set>
+	<set xpath="/buffs/buff[@name='buffIllInfection2']/effect_group/passive_effect[@name='StaminaMax']/@value">40</set>
+	<set xpath="/buffs/buff[@name='buffIllInfection3']/effect_group/passive_effect[@name='StaminaChangeOT']/@value">4</set>
+	<set xpath="/buffs/buff[@name='buffIllInfection3']/effect_group/passive_effect[@name='StaminaLoss']/@value">0.6</set>
+	<set xpath="/buffs/buff[@name='buffIllInfection3']/effect_group/passive_effect[@name='StaminaMax']/@value">60</set>
+
+<!-- Lower hunger/thirst threshold from 50%/25% to 25%/10% --> 
+	<set xpath="/buffs/buff[@name='buffStatusCheck']/effect_group/triggered_effect[@buff='buffStatusHungry1']/requirement[@operation='LTE']/@value">.25</set>
+	<set xpath="/buffs/buff[@name='buffStatusCheck']/effect_group/triggered_effect[@buff='buffStatusHungry1']/requirement[@operation='GT']/@value">.15</set>
+	<set xpath="/buffs/buff[@name='buffStatusCheck']/effect_group/triggered_effect[@buff='buffStatusHungry2']/requirement[@operation='LTE']/@value">.1</set>
+	<set xpath="/buffs/buff[@name='buffStatusCheck']/effect_group/triggered_effect[@buff='buffStatusThirsty1']/requirement[@operation='LTE']/@value">.25</set>
+	<set xpath="/buffs/buff[@name='buffStatusCheck']/effect_group/triggered_effect[@buff='buffStatusThirsty1']/requirement[@operation='GT']/@value">.15</set>
+	<set xpath="/buffs/buff[@name='buffStatusCheck']/effect_group/triggered_effect[@buff='buffStatusThirsty2']/requirement[@operation='LTE']/@value">.1</set>
+	
 </configs>

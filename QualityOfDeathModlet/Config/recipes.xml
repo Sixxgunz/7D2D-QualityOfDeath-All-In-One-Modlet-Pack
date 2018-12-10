@@ -1,6 +1,32 @@
 <configs>
-
 <!-- Custom Recipes -->
+
+<!-- Allow glue to be crafted using rottingflesh while at chemistry station -->
+	<set xpath="/recipes/recipe[@name='resourceGlue' and @craft_area='chemistryStation']/ingredient[@name='resourceFemur']/@name">foodRottingFlesh</set>
+
+<!-- Crude Pipe Bomb -->
+<!--
+	<append xpath="/recipes">
+		<recipe name="crudePipeBomb" count="1">
+			<ingredient name="resourceMetalPipe" count="1"/>
+			<ingredient name="resourceGunPowder" count="5"/>
+			<ingredient name="resourceNail" count="20"/>
+			<ingredient name="resourceScrapPolymers" count="2"/>
+			<ingredient name="candle" count="2"/>
+		</recipe>
+	</append>
+	-->
+	
+<!-- Crude Torch Grenade -->
+	<append xpath="/recipes">
+		<recipe name="crudeTorchGrenade" count="1">
+			<ingredient name="resourceWood" count="25"/>
+			<ingredient name="resourceGunPowder" count="5"/>
+			<ingredient name="resourceNail" count="10"/>
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceDuctTape" count="2"/>
+		</recipe>
+	</append>
 
 <!-- Lockpick Recipe -->
 	<append xpath="/recipes">
@@ -9,18 +35,31 @@
 		</recipe>
 	</append>
 	
+<!-- Custom Lighting Recipes -->
+<append xpath="/recipes">
+<recipe name="customLightRed_Player" count="1" craft_area="workbench">
+	<ingredient name="resourceForgedIron" count="2"/>
+	<ingredient name="resourceElectricParts" count="4"/>
+</recipe>
+</append>
+	
+<!-- Acid Recipe -->
 <append xpath="/recipes">
 <recipe name="resourceAcid" count="1" craft_area="campfire" craft_tool="toolCookingPot">
 	<ingredient name="carBattery" count="1"/>
 	<ingredient name="resourceScrapPolymers" count="20"/>
 </recipe>
+</append>
+
+<!-- MegaCrush Recipe -->
+<append xpath="/recipes">
 <recipe name="drinkCanMegaCrush" count="1" craft_area="campfire" craft_tool="toolCookingPot">
 	<ingredient name="resourceAcid" count="2"/>
 	<ingredient name="resourceCropCoffeeBeans" count="20"/>
 	<ingredient name="drinkJarGoldenRodTea" count="1"/>
 </recipe>
-
 </append>
+
 <!-- Hardened Chest - using similar settings from gun safe recipe.-->
 <append xpath="/recipes">
 <recipe name="cntHardenedChestSecure" count="1" craft_area="workbench">
@@ -28,7 +67,10 @@
 	<ingredient name="resourceSpring" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 </recipe>
+</append>
+
 <!-- Reincorced Chest -->
+<append xpath="/recipes">
 <recipe name="cntLootChestHero" count="1" craft_area="workbench">
 	<ingredient name="resourceForgedIron" count="20"/>
 	<ingredient name="resourceSpring" count="5"/>

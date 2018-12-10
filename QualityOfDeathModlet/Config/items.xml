@@ -437,4 +437,200 @@
 </item>
 </append>
 
+<!-- Increase Wood Fuel Value -->
+
+	<set xpath="/items/item[@name='resourceWood']/property[@name='FuelValue']/@value">75</set>
+
+<!-- Speed up with lower numbers or Slow Down Forge Times with higher values -->
+<insertAfter xpath="/items/item[@name='resourceRockSmall']/property[@name='Group']">
+	<property name="MeltTimePerUnit" value="0.15"/>
+	<property name="CraftingIngredientTime" value="0.15"/>
+	</insertAfter>
+<insertAfter xpath="/items/item[@name='resourceIronFragment']/property[@name='Group']">
+	<property name="MeltTimePerUnit" value="0.15"/>
+	<property name="CraftingIngredientTime" value="0.15"/>
+	</insertAfter>
+<insertAfter xpath="/items/item[@name='resourceScrapIron']/property[@name='Group']">
+	<property name="MeltTimePerUnit" value="0.15"/>
+	<property name="CraftingIngredientTime" value="0.15"/>
+	</insertAfter>
+<insertAfter xpath="/items/item[@name='resourceForgedIron']/property[@name='Group']">
+	<property name="MeltTimePerUnit" value="0.15"/>
+	<property name="CraftingIngredientTime" value="0.15"/>
+	</insertAfter>
+<insertAfter xpath="/items/item[@name='resourceForgedSteel']/property[@name='Group']">
+	<property name="MeltTimePerUnit" value="0.15"/>
+	<property name="CraftingIngredientTime" value="0.15"/>
+	</insertAfter>
+<insertAfter xpath="/items/item[@name='resourceScrapBrass']/property[@name='Group']">
+	<property name="MeltTimePerUnit" value="0.15"/>
+	<property name="CraftingIngredientTime" value="0.15"/>
+	</insertAfter>
+<insertAfter xpath="/items/item[@name='resourceScrapLead']/property[@name='Group']">
+	<property name="MeltTimePerUnit" value="0.15"/>
+	<property name="CraftingIngredientTime" value="0.15"/>
+	</insertAfter>
+<insertAfter xpath="/items/item[@name='resourceClayLump']/property[@name='Group']">
+	<property name="MeltTimePerUnit" value="0.15"/>
+	<property name="CraftingIngredientTime" value="0.15"/>
+	</insertAfter>
+<insertAfter xpath="/items/item[@name='resourceCobblestones']/property[@name='Group']">
+	<property name="MeltTimePerUnit" value="0.15"/>
+	<property name="CraftingIngredientTime" value="0.15"/>
+	</insertAfter>
+
+<!-- Remove groan/grunt sound from Power Attacks -->
+	<remove xpath="/items/item/effect_group[@name='Power Attack']/triggered_effect[@trigger='onSelfSecondaryActionStart'][@action='PlaySound']"/>
+
+<!-- Allow Vehicles to be sold -->
+	<set xpath="/items/item[contains(@name, 'Placeable')]/property[@name='SellableToTrader'][@value='false']/@value">true</set>
+	<set xpath="/items/item[@name='vehicleMinibikePlaceable']/property[@name='EconomicValue'][@value='12000']/@value">750</set>
+	<set xpath="/items/item[@name='vehicleBicyclePlaceable']/property[@name='EconomicValue'][@value='4000']/@value">500</set>
+	<set xpath="/items/item[@name='vehicleMotorcyclePlaceable']/property[@name='EconomicValue'][@value='20000']/@value">1500</set>
+	<set xpath="/items/item[@name='vehicle4x4TruckPlaceable']/property[@name='EconomicValue'][@value='40000']/@value">2500</set>
+	<set xpath="/items/item[@name='vehicleGyrocopterPlaceable']/property[@name='EconomicValue'][@value='100000']/@value">3000</set>
+
+<!-- Adjust movement speed with all armor -->
+	<set xpath="/items/item[contains(@name,'armorCloth')]/effect_group/passive_effect[@name='Mobility'][@value='0.04']/@value">0.01</set>
+	<set xpath="/items/item[contains(@name,'armorScrap')]/effect_group/passive_effect[@name='Mobility'][@value='0.06']/@value">0.02</set>
+	<set xpath="/items/item[contains(@name,'armorLeather')]/effect_group/passive_effect[@name='Mobility'][@value='0.04']/@value">0.01</set>
+	<set xpath="/items/item[contains(@name,'armorIron')]/effect_group/passive_effect[@name='Mobility'][@value='0.06']/@value">0.04</set>
+	<set xpath="/items/item[contains(@name,'armorMilitary')]/effect_group/passive_effect[@name='Mobility'][@value='0.04']/@value">0.02</set>
+	<set xpath="/items/item[contains(@name,'armorSteel')]/effect_group/passive_effect[@name='Mobility'][@value='0.06']/@value">0.05</set>
+	<set xpath="/items/item[@name='armorMiningHelmet']/effect_group/passive_effect[@name='Mobility'][@value='0.04']/@value">0.01</set>
+	<set xpath="/items/item[@name='armorSwatHelmet']/effect_group/passive_effect[@name='Mobility'][@value='0.06']/@value">0.03</set>
+	<set xpath="/items/item[@name='armorFootballHelmet']/effect_group/passive_effect[@name='Mobility'][@value='0.04']/@value">0.03</set>
+	<set xpath="/items/item[@name='armorFootballHelmetZU']/effect_group/passive_effect[@name='Mobility'][@value='0.04']/@value">0.03</set>
+
+<!-- Crude Pipe Bomb Copy of Thrown Pipe Bomb ofc -->
+<!--
+<append xpath="/items">
+<item name="crudePipeBomb">
+	<property name="Tags" value="weapon,perkExplosiveWeapons"/>
+	<property name="DisplayType" value="ammoGrenade"/>
+	<property name="CustomIcon" value="thrownAmmoPipeBomb"/>
+	<property name="CustomIconTint" value="e87002"/>
+	<property name="Class" value="ItemClassTimeBomb"/>
+	<property name="HoldType" value="25"/>
+	<property name="Meshfile" value="Items/Weapons/Ranged/PipeBomb/PipeBombPrefab"/>
+	<property name="DropScale" value="3"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="5"/>
+	<property name="EconomicValue" value="20"/>
+	<property name="Weight" value="0"/>
+	<property name="Explosion.BlockDamage" value="10"/>
+	<property name="Explosion.EntityDamage" value="40"/>
+	<property name="Explosion.ParticleIndex" value="1"/>
+	<property name="Explosion.RadiusBlocks" value="2"/>
+	<property name="Explosion.RadiusEntities" value="2"/>
+	<property name="Explosion.DamageBonus.stone" value="0.017"/>
+	<property name="Explosion.DamageBonus.metal" value="0.013"/>
+	<property name="Explosion.DamageBonus.earth" value="0.5"/>
+	<property name="Explosion.DamageBonus.wood" value="0.3"/>
+	<property name="Explosion.DamageBonus.water" value="0"/>
+	<property name="Explosion.BlastPower" value="50"/>
+	<property name="FuseTime" value="5"/>
+	<property class="Action0">
+		<property name="Class" value="ThrowAway"/>
+		<property name="Delay" value="1.2"/> 
+		<property name="Throw_strength_default" value="8"/>
+		<property name="Throw_strength_max" value="25"/>
+		<property name="Max_strain_time" value="1.5"/>
+		<property name="Sound_start" value="swoosh"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="Activate"/>
+		<property name="Delay" value="1"/> 
+	</property>
+	<property name="ThrowableDecoy" value="true"/>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillScience"/>
+	<property name="DescriptionKey" value="crudePipeBombDesc"/>
+	<effect_group tiered="false">
+		<display_value name="ExRadius" value="5" />
+	</effect_group>
+</item>
+</append>
+-->
+<!-- Crude Torch Grenade -->
+<append xpath="/items">
+<item name="crudeTorchGrenade">
+	<property name="Tags" value="weapon,perkExplosiveWeapons"/>
+	<property name="DisplayType" value="ammoGrenade"/>
+	<property name="CustomIcon" value="meleeToolTorch"/>
+	<property name="CustomIconTint" value="e87002"/>
+	<property name="Class" value="ItemClassTimeBomb"/>
+	<property name="HoldType" value="12"/>
+	<property name="Meshfile" value="Items/Tools/torchPrefab"/>
+	<property name="DropScale" value="3"/>
+	<property name="Material" value="MDynamite"/>
+	<property name="Stacknumber" value="5"/>
+	<property name="EconomicValue" value="20"/>
+	<property name="Weight" value="0"/>
+	<property name="Explosion.BlockDamage" value="10"/>
+	<property name="Explosion.EntityDamage" value="40"/>
+	<property name="Explosion.ParticleIndex" value="1"/>
+	<property name="Explosion.RadiusBlocks" value="2"/>
+	<property name="Explosion.RadiusEntities" value="2"/>
+	<property name="Explosion.DamageBonus.stone" value="0.017"/>
+	<property name="Explosion.DamageBonus.metal" value="0.013"/>
+	<property name="Explosion.DamageBonus.earth" value="0.5"/>
+	<property name="Explosion.DamageBonus.wood" value="0.3"/>
+	<property name="Explosion.DamageBonus.water" value="0"/>
+	<property name="Explosion.BlastPower" value="50"/>
+	<property name="FuseTime" value="5"/>
+	<property class="Action0">
+		<property name="Class" value="ThrowAway"/>
+		<property name="Delay" value="1.2"/> 
+		<property name="Throw_strength_default" value="8"/>
+		<property name="Throw_strength_max" value="25"/>
+		<property name="Max_strain_time" value="1.5"/>
+		<property name="Sound_start" value="swoosh"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="Activate"/>
+		<property name="Delay" value="1"/> 
+	</property>
+	<property name="ThrowableDecoy" value="true"/>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillScience"/>
+	<property name="DescriptionKey" value="crudeTorchGrenadeDesc"/>
+	<effect_group tiered="false">
+		<display_value name="ExRadius" value="5" />
+	</effect_group>
+</item>
+</append>
+
+<!-- Zed damage reduction per block tier types -->
+	<append xpath="/items/item[@name='meleeHandMaster']/property[@class='Action0']">
+		<property name="DamageBonus.glass" value="1"/>		
+		<property name="DamageBonus.earth" value="0.8"/>	
+		<property name="DamageBonus.wood" value="0.5"/>		
+		<property name="DamageBonus.metal" value="0.3"/>	
+		<property name="DamageBonus.stone" value="0.25"/>	
+	</append>
+	
+<!-- Custom Light Items -->
+<!-- Deprecated, leaving for later -->
+<!--
+<append xpath="/items">
+<item name="customLightRed">
+	<property name="Class" value="ItemClassTorch"/>
+	<property name="HoldType" value="12"/>	
+	<property name="CustomIcon" value="ceilingLight01"/>
+	<property name="Meshfile" value="Entities/Lighting/industrial_light_02_redPrefab"/> <property name="HandleFace" value="Top"/>
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="50"/>
+	<property name="FuelValue" value="16"/>
+	<property name="EconomicValue" value="24"/>
+	<property class="Action1">
+		<property name="Class" value="PlaceAsBlock"/>
+		<property name="Delay" value="0.5"/>
+		<property name="Blockname" value="customLightRed_player"/>
+	</property>
+	<property name="Group" value="Basics,Decor/Miscellaneous"/>
+</item>
+</append>
+-->
+	
 </configs>

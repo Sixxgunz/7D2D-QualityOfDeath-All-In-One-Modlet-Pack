@@ -1,3 +1,6 @@
 
 meleeToolLockpick,items,Tool,New,Crude Lockpick,,,,,
 meleeToolLockpickDesc,items,Melee,KgNone,"Prefered tool of choice for every locked device on scavenging expeditions.\nRepair with Iron.",,,,,,
+crudeTorchGrenade,items,Tool,New,Crude Torch Grenade,,,,,
+crudeTorchGrenadeDesc,items,Melee,KgNone,"Prefered explosive in a pinch for any scavenger or long time survivor.\nRight click to pull the pin right before you release.",,,,,,
+customLightRed_Player,blocks,Electricity,New,Red Light,,,,,

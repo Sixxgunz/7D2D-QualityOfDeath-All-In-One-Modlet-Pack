@@ -610,4 +610,38 @@
 			</effect_group>
 		</perk>
 	</append>
+	
+<!-- Speed up Crafting Buff from Intellect -->
+	<set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='CraftingTime' and @level=1]/@value">0.2</set>
+	<set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='CraftingTime' and @level=1]/@value">0.4</set>
+	<set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='CraftingTime' and @level=1]/@value">0.6</set>
+	<set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='CraftingTime' and @level=1]/@value">0.8</set>
+	<set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='CraftingTime' and @level=1]/@value">1.0</set>
+	<set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='CraftingTime' and @level=1]/@value">1.2</set>
+	<set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='CraftingTime' and @level=1]/@value">1.4</set>
+	<set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='CraftingTime' and @level=1]/@value">1.6</set>
+	<set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='CraftingTime' and @level=1]/@value">1.8</set>
+	<set xpath="/progression/attributes/attribute[@name='attIntellect']/effect_group/passive_effect[@name='CraftingTime' and @level=1]/@value">2.0</set>
+	
+<!-- Player Movement Speed Perk -->
+<!-- Untested -->
+	<append xpath="/progression/attributes">
+		<attribute min_level="0" max_level="5" name="attSpeed" name_key="attSpeedName" desc_key="attSpeedDesc" icon="ui_game_symbol_speed">
+			<level_requirements level="1"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="PlayerLevel" target="self" operation="GTE" value="5" desc_key="reqPlayerLevel5"/></level_requirements>
+			<level_requirements level="3"><requirement name="PlayerLevel" target="self" operation="GTE" value="10" desc_key="reqPlayerLevel10"/></level_requirements>
+			<level_requirements level="4"><requirement name="PlayerLevel" target="self" operation="GTE" value="20" desc_key="reqPlayerLevel20"/></level_requirements>
+			<level_requirements level="5"><requirement name="PlayerLevel" target="self" operation="GTE" value="30" desc_key="reqPlayerLevel30"/></level_requirements>
+			<effect_group>
+					<passive_effect name="WalkSpeed" operation="perc_add" value="0.1,0.5" level="1,5"/>
+					<passive_effect name="RunSpeed" operation="perc_add" value="0.02,0.1" level="1,5"/>
+					<effect_description level="1" desc_key="attSpeedRank1Desc"/>
+					<effect_description level="2" desc_key="attSpeedRank2Desc"/>
+					<effect_description level="3" desc_key="attSpeedRank3Desc"/>
+					<effect_description level="4" desc_key="attSpeedRank4Desc"/>
+					<effect_description level="5" desc_key="attSpeedRank5Desc"/>
+			</effect_group>
+		</attribute>
+	</append>
+
 </configs>

@@ -27,4 +27,11 @@
 	<set xpath="/materials/material[@id='Mclay']/property[@name='Experience']/@value">1</set>
 	<set xpath="/materials/material[@id='Mdirt']/property[@name='Experience']/@value">1</set>
 	<set xpath="/materials/material[@id='Morganic']/property[@name='Experience']/@value">5</set>
+
+	<!-- change sand and gravel to help curb land slides -->
+	<!-- set sand stability -->
+	<set xpath="/materials/material[@id='Msand']/property[@name='stability_glue']/@value">40</set>
+	<!-- set sand stability -->
+	<set xpath="/materials/material[@id='Mgravel']/property[@name='stability_glue']/@value">40</set>
+	
 </configs>
