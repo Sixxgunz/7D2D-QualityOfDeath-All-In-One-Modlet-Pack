@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prefab>
+    <property name="CopyAirBlocks" value="True" />
+    <property name="AllowTopSoilDecorations" value="False" />
+    <property name="YOffset" value="-1" />
+    <property name="RotationToFaceNorth" value="2" />
+    <property name="Zoning" value="downtown" />
+    <property name="AllowedTownships" value="city,town" />
+    <property name="TraderArea" value="False" />
+    <property name="ExcludeDistantPOIMesh" value="False" />
+    <property name="SleeperVolumeSize" value="7, 7, 8#57, 8, 58#51, 9, 51#51, 8, 51#21, 8, 51#51, 8, 51#51, 8, 51#27, 8, 15#15, 5, 9#26, 8, 14#14, 16, 14#13, 7, 9#15, 8, 15#15, 8, 15#15, 8, 15#15, 8, 15#25, 8, 15#25, 7, 14#13, 8, 37#38, 8, 21#51, 8, 51#6, 6, 5#25, 8, 15#51, 8, 51#37, 8, 51#51, 8, 51#51, 8, 51#51, 8, 51#37, 8, 51#14, 8, 26#17, 4, 3#3, 3, 17#51, 8, 51#14, 16, 20#13, 7, 6" />
+    <property name="SleeperVolumeStart" value="57, 2, 22#10, 1, 17#13, 9, 21#13, 18, 21#28, 26, 21#13, 34, 21#13, 42, 21#25, 18, 21#31, 18, 12#25, 18, 58#13, 42, 58#32, 26, 34#13, 26, 21#49, 26, 21#49, 26, 57#13, 26, 57#26, 34, 21#26, 34, 58#13, 50, 21#26, 50, 21#13, 50, 21#53, 50, 28#26, 58, 21#13, 66, 21#27, 74, 21#13, 90, 21#13, 98, 21#13, 106, 21#27, 82, 21#50, 90, 27#24, 66, 72#10, 42, 32#13, 58, 21#13, 74, 52#13, 74, 46" />
+    <property name="SleeperVolumeGroup" value="S_Zom_Businessman,1,2,S_Zom_Businessman,12,15,S_Zom_Businessman,17,17,S_Zom_Businessman,15,15,S_Zom_Businessman,12,12,S_Zom_Utility_Worker,30,30,S_-Group_Generic_Zombie,16,18,S_Zom_Businessman,9,10,S_-_Group_Zom_Soldier,3,4,S_-Group_Generic_Zombie,9,10,S_-Group_Generic_Zombie,28,28,S_-Group_Generic_Zombie,3,4,S_Zom_Businessman,5,6,S_Zom_Businessman,5,6,S_Zom_Businessman,5,6,S_Zom_Businessman,5,6,S_Zom_Utility_Worker,9,10,S_Zom_Utility_Worker,9,10,S_-Group_Generic_Zombie,5,6,S_-Group_Generic_Zombie,7,8,S_-Group_Generic_Zombie,18,22,S_Zom_Snow,3,4,S_Zom_Utility_Worker,9,10,S_Zom_Businessman,22,25,S_Zom_Businessman,28,32,S_Zom_Businessman,20,25,S_-Group_Generic_Zombie,16,18,S_-_Group_Zom_Badass,15,18,S_-_Group_Hospital,28,32,S_-_Group_Zom_Soldier,7,8,S_Zom_Utility_Worker,5,6,S_Zom_Utility_Worker,5,6,S_Zom_Utility_Worker,18,22,S_-_Group_Hospital,9,10,S_Zom_Businessman,1,2" />
+    <property name="SleeperVolumeGameStageAdjust" value=",,,,,,,hard,hard,,,hard,,,,,hard,hard,hard,,,,,,,,,,,hard,,hard,," />
+    <property name="SleeperIsLootVolume" value="True,False,False,False,False,False,False,True,True,True,True,True,False,False,False,False,True,True,False,False,False,True,True,False,False,False,False,False,False,True,False,False,False,True,False" />
+    <property name="DistantPOIYOffset" value="0" />
+    <property name="EditorGroups" value="downtown" />
+    <property name="SleeperIsBossVolume" value="False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False,False" />
+    <property name="QuestTags" value="clear,fetch,hidden_cache" />
+    <property name="DifficultyTier" value="6" />
+    <property name="ExcludePOICulling" value="False" />
+</prefab>
