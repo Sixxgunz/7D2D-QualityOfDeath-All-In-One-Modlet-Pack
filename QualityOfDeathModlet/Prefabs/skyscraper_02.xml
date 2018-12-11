@@ -4,7 +4,7 @@
     <property name="AllowTopSoilDecorations" value="False" />
     <property name="YOffset" value="-1" />
     <property name="RotationToFaceNorth" value="2" />
-    <property name="Zoning" value="downtown" />
+    <property name="Zoning" value="commercial,industrial,downtown" />
     <property name="AllowedTownships" value="city,town" />
     <property name="TraderArea" value="False" />
     <property name="DistantPOIYOffset" value="0" />
